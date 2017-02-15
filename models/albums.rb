@@ -36,4 +36,9 @@ class Album
     return result_objects
   end
 
+  def delete()
+    sql = "DELETE FROM albums WHERE artist_id = #{@artist_id};" # have to delete from both otherwise foreign key prob
+    SqlRunner.run(sql)
+  end
+
 end
