@@ -23,20 +23,17 @@ class Album
   end
 
   def self.all()
-
     sql = "SELECT * FROM albums;"
     results = SqlRunner.run(sql)
     result_objects = results.map {|result| Album.new(result)}
     return result_objects
   end
 
-  def album_artist
-
+  def show_album_artist
     sql = "SELECT * FROM artists WHERE artist_id = #{@artist_id};"
     results = SqlRunner.run(sql)
     result_objects = results.map {|result| Artist.new(result)}
     return result_objects
-
   end
 
 end
