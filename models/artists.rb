@@ -2,6 +2,8 @@ require_relative('../sql_runner.rb')
 
 class Artist
 
+  attr_reader :artist_id
+
   def initialize(options)
     @name = options["name"]
     @artist_id = options["artist_id"] if options["artist_id"]
