@@ -7,3 +7,6 @@ artist1.save()
 
 album1 = Album.new({"title" => "Greatest Hits", "genre" => "Classic Rock", "artist_id" => artist1.artist_id })
 album1.save()
+
+binding.pry
+nil
