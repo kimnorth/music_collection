@@ -3,6 +3,7 @@ require_relative('../sql_runner.rb')
 class Album
 
   attr_reader :artist_id
+  attr_accessor :title, :genre
 
   def initialize(options)
     @title = options["title"]
@@ -39,6 +40,15 @@ class Album
   def delete()
     sql = "DELETE FROM albums WHERE artist_id = #{@artist_id};" # have to delete from both otherwise foreign key prob
     SqlRunner.run(sql)
+  end
+
+  def update()
+    sql = "UPDATE albums
+           SET (title, genre) =
+           ('#{@title}', '#{@genre}');"
+
+    SqlRunner.run(sql)
+
   end
 
 end
