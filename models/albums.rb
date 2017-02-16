@@ -46,9 +46,13 @@ class Album
     sql = "UPDATE albums
            SET (title, genre) =
            ('#{@title}', '#{@genre}');"
-
     SqlRunner.run(sql)
-
   end
+
+  # def self.find_all_albums_by_id()
+  #   sql = "SELECT * FROM albums WHERE artist_id = #{@artist_id};"
+  #   results = SqlRunner.run(sql)
+  #   return results
+  # end
 
 end
